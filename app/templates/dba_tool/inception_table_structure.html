@@ -43,6 +43,18 @@ try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
 <form class="form-horizontal" role="form" action="inception_table_structure" method='post'>
     <div class="form-group">
       <div class="col-sm-9">
+      	<select id="selectdb" name="selectdb">
+                <OPTION SELECTED VALUE="">Select DataBase...</OPTION>
+                <option value='checktest'>checktest</option>
+                <option value='demo'>demo</option>
+		{% for k, v in arr_dbname %}
+			<option value={{ v }}>{{ k }}</option>
+		{% endfor %}
+	</select>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-9">
           <textarea id="form-field-2" placeholder="table structure" class="col-xs-10 col-sm-12" name="mysql_structure" rows="15">{{abc}}</textarea>
       </div>
     </div>
